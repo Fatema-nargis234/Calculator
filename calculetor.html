@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .container2{
+            margin-left: 30%;
+            width: 40%;
+            
+            height: 450px;
+            background-color:rgb(94, 88, 183);
+            border: 5px solid;
+            padding-left:20px;
+        }
+        .box{
+            width: 35%;
+            height: 120px;
+            position: relative;
+            left: 41.5%;
+            bottom: 400px;
+            margin-top: 10%;
+            background-color:rgb(94, 88, 183);
+            border: 2px solid;
+        }
+        .box1{
+            width: 17%;
+            height: 80%;
+            position: relative;
+            left: 41.5%;
+           
+            background-color: rgb(173, 60, 156);
+            font-size: 20pt;
+            border: 5px solid;
+           
+
+        }
+        .input{
+            position: absolute;
+            top: 5%;
+            width: 80%;
+            height: 20%;
+            text-align: center;
+            margin-left: 10%;
+            border:2px solid pink;
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    
+    <div class="container2">
+        <h2><center><u>Result Finder system</u></center></h2>
+         <div>
+            <div class="book1">
+                 <label>Bangla</label><br>
+                 <input id="bookone" type="number" name=""placeholder="Marks">
+            </div>
+            <br>
+            <div class="book2">
+                <label>English</label><br>
+                <input id="booktwo" type="number"name=""placeholder="Marks">
+           </div>
+           <br>
+           <div class="book3">
+                <label>Math </label><br>
+                <input id="bookthree" type="number"name=""placeholder="Marks">
+            </div>
+            <br>
+            <div class="book4">
+                <label>ICT </label><br>
+                <input id="bookfour" type="number"name=""placeholder="Marks">
+           </div>
+           <br>
+           <div class="book5">
+                <label>Physics</label><br>
+                <input id="bookfive" type="number"name=""placeholder="Marks">
+           </div>
+           <br>
+           <div>
+            <button onclick=" calculate()">Get Result</button>
+           </div>
+           <br>
+        </div>
+         <div class="box">
+            <table>
+                <tr>
+                    <td>Total Marks</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Obtained Marks:</td>
+                    <td id="obtain"></td>
+                </tr>
+                <tr>
+                    <td>Percentage:</td>
+                    <td id="per"></td>
+                </tr>
+                <tr>
+                    <td>Grade:</td>
+                    <td id="Grade"></td>
+                </tr>
+                <tr>
+                    <td>Remarks:</td>
+                    <td id="remarks"></td>
+                </tr>
+            </table>
+         </div>
+    <script>
+        function calculate() {
+           var a=parseInt(document.getElementById('bookone').value);
+           var b=parseInt(document.getElementById('booktwo').value);
+           var c=parseInt(document.getElementById('bookthree').value);
+           var d=parseInt(document.getElementById('bookfour').value);
+           var e=parseInt(document.getElementById('bookfive').value);
+           if(a>100 || b>100 || c>100 || d>100 || e>100){
+            alert("please enter correct value");
+           }
+           else
+           {
+            var obtain=a+b+c+d+e;
+            document.getElementById("obtain").innerHTML=obtain;
+            var per=obtain/500*100;
+            document.getElementById("per").innerHTML=per + '%';
+            if(a>40 && b>40 && c>40 && d>40 && e>40){
+            document.getElementById("remarks").innerHTML="<span style='color:green'>Pass</span>";
+
+            }
+            else
+            {
+            document.getElementById("remarks").innerHTML= "<span style='color:red'>Fail</span>";
+            }
+
+         } 
+           if(per>=80){
+            document.getElementById("Grade").textContent="A+";       
+           }
+           else if(per>=70){
+            document.getElementById("Grade").textContent="A";       
+           }
+           else if(per>=60){
+            document.getElementById("Grade").textContent="A-";       
+           }
+           else if(per>=50){
+            document.getElementById("Grade").textContent="B";       
+           }
+           else if(per>40){
+            document.getElementById("Grade").textContent="C";       
+           }
+           else if(per>33){
+           {
+            document.getElementById("Grade").textContent="D";
+           }
+           eles
+           {
+            document.getElementById("Grade").textContent="F";
+           }
+        }
+    }
+    </script>     
+    </div>
+
+    <div>
+        <br>
+        <br>
+        <h2><center>Calculator</center></h2>
+        <div class="box1">
+<input type="text" class="input" id="input">
+<br>
+<br>
+<div style="text-align: center;">
+
+        <button type="button" onclick="setinput('1')">1</button>
+        <button type="button" onclick="setinput('2')">2</button>
+        <button type="button" onclick="setinput('3')">3</button>
+
+        <button type="button" onclick="setinput('4')">4</button>
+        <button type="button" onclick="setinput('5')">5</button>
+</div>
+<div style="text-align: center;">
+        <button type="button" onclick="setinput('6')">6</button>
+    
+        <button type="button" onclick="setinput('7')">7</button>
+        <button type="button" onclick="setinput('8')">8</button>
+        <button type="button" onclick="setinput('9')">9</button>
+        <button type="button" onclick="setinput('0')">0</button>
+    </div>
+
+    <div style="text-align: center;">
+        <button type="button" onclick="setop('+')">+</button>
+        <button type="button" onclick="setop('-')">-</button>
+        <button type="button" onclick="setop('*')">*</button>
+        <button type="button" onclick="setop('/')">/</button>
+        <button type="button" onclick="calculation()">=</button>
+</div>
+<div style="text-align: center;">
+    <button type="button" onclick="cl()">clear</button>
+    <br>
+    <br>
+</div>
+    </div>
+</div>
+<script>
+function setinput(x){
+    let i = document.getElementById('input');
+    i.value += x;
+}
+function setop(y){
+    let i = document.getElementById('input');
+    i.value += y;
+}
+function cl(){
+    let x ='';
+    document.getElementById('input').value = x;
+}
+
+function calculation(){
+
+    let x = document.getElementById('input');
+
+    let resuls = eval(x.value);
+
+    document.getElementById('input').value = resuls;
+}
+
+</script>
+</body>
+</html>
